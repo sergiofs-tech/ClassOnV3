@@ -1,0 +1,28 @@
+{% block student %}
+    <h2>Student</h2>
+    {% from "includes/_formhelpers.html" import render_field %}
+    <form method="POST" action="">
+        <div class="form-group">
+            {{render_field(formStudent.name, class_="form-control")}}
+        </div>
+        <div class="form-group">
+            {{render_field(formStudent.lastName, class_="form-control")}}
+        </div>
+        <div class="form-group">
+            {{render_field(formStudent.lastNameSecond, class_="form-control")}}
+        </div>
+        <div class="form-group">
+            {{render_field(formStudent.nia, class_="form-control")}}
+        </div>
+        <div class="form-group">
+            {{render_field(formStudent.email, class_="form-control")}}
+        </div>
+        <div class="form-group">
+            {{render_field(formStudent.password, class_="form-control")}}
+        </div>
+        <div class="form-group">
+            {{render_field(formStudent.confirm, class_="form-control")}}
+        </div>
+        <p><input type="submit" name="btn" class="btn btn-primary" value="Submit student"></p>
+    </form>
+{% endblock %}

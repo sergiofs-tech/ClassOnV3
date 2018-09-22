@@ -1,0 +1,79 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <h1>{{ assigment.course.name }}</h1>
+    <!--<a class="btn btn-success" href="/add_article">Add article</a>-->
+    <hr>
+    <div class="progress">
+      <div class="progress-bar" style="width:{{ progress }}%"></div>
+    </div>
+
+    <!-- <div class="row"> -->
+        <div>
+        <!--Assigment column-->
+        <!-- <div class="col"> -->
+            <h2>{{ section.name }}</h2>
+            <p>
+                {{ section.text }}
+            </p>
+
+            <ul class="pagination">
+                <!--Previous page-->
+                {% if (page - 1) < 1 %}
+                    <li class="page-item disabled"><a class="page-link" href="/assigment/{{ assigment.db_id }}/{{ page - 1 }}">Previous</a></li>
+                {% else %}
+                    <li class="page-item"><a class="page-link" href="/assigment/{{ assigment.db_id }}/{{ page - 1 }}">Previous</a></li>
+                {% endif %}
+
+                <!--Middle pages-->
+                {% for section in assigment.sections_dict() %}
+                    {% if section.order == (page) %}
+                        <li class="page-item active"><a class="page-link" href="/assigment/{{ assigment.db_id }}/{{ section.order }}">{{ section.order }}</a></li>
+                    {% else %}
+                        <li class="page-item"><a class="page-link" href="/assigment/{{ assigment.db_id }}/{{ section.order }}">{{ section.order }}</a></li>
+                    {% endif %}
+                {% endfor %}
+
+                <!--Next page-->
+                {% if page >= totalSections %}
+                    <li class="page-item disabled"><a class="page-link" href="/assigment/{{ assigment.db_id }}/{{ page + 1 }}">Next</a></li>
+                {% else %}
+                    <li class="page-item"><a class="page-link" href="/assigment/{{ assigment.db_id }}/{{ page + 1 }}">Next</a></li>
+                {% endif %}
+            </ul>
+        </div>
+        <!--Doubts column-->
+        <!-- <div class="col"> -->
+        <div>
+            <hr class="my-4">
+            <h2>Doubts</h2>
+            <!--Doubts container-->
+            <div class="list-group" id="doubts">
+                <!-- <div class="card">
+                    <div class="card-body">
+                        <span class="badge badge-info">Section 1</span>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item list-group-item-secondary">Cras justo odio</li>
+                        <li class="list-group-item list-group-item-secondary">Dapibus ac facilisis in</li>
+                        <li class="list-group-item list-group-item-secondary">Vestibulum at eros</li>
+                    </ul>
+                    <div class="card-body">
+                            <button type="button" class="btn btn-primary float-right">Solve doubt</button>
+                    </div>
+                </div>
+                <br> -->
+            </div>
+        </div>
+        <hr class="my-4">
+        <h3>Post a new doubt</h3>
+        {% include "doubt.html" %}
+        <hr class="my-4">
+    </div>
+
+    {% include "modal.html" %}
+
+    <script src="{{url_for('.static', filename='js/script_assigment.js')}}"></script>
+
+{% endblock %}

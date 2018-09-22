@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<head>
+       <link rel="stylesheet" type="text/css" href="{{url_for('.static', filename='js/dashboard.css')}}">
+
+</head>
+    <h1>Welcome professor</h1>
+    <p>In this page you can manage your courses, assigments and classes.</p>
+    <hr class="my-4">
+    <div class="options">
+        <div class="option">
+           <a href="/professor/create_classroom" data-toggle="tooltip" title="Create new classroom, choosing the number of rows and columns and then assigning a name to it">
+                <input type="image"  src="{{url_for('.static', filename='images/table.png')}}" class="image_button"  />
+           </a>
+           <p class="option_title"> CREATE NEW CLASSROOM</p>
+        </div>
+        <div class="option">
+
+                <a href="/professor/open_classroom" data-toggle="tooltip" title="Select between the existing classrooms that were previously saved  ">
+                <input type="image"  src="{{url_for('.static', filename='images/class.png')}}" class="image_button"/>
+                </a>
+           <p class="option_title"> SELECT EXISTING CLASSROOM</p>
+        </div>
+
+
+         <div class="option">
+
+            <a href="/professor/create_assigment" data-toggle="tooltip" title="Create assigment, then you will be able to add them to any classroom">
+                <input type="image"  src="{{url_for('.static', filename='images/task.png')}}" class="image_button" />
+            </a> <p class="option_title"> CREATE ASSIGMENT </p>
+         </div>
+
+    </div>
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+});
+</script>
+
+{% endblock %}

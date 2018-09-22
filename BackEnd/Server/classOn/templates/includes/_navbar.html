@@ -1,0 +1,51 @@
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+    <div class="collapse navbar-collapse">
+        <a class="navbar-brand" href="/">
+        <img class="navbar-brand" src="https://preview.ibb.co/cLPqCe/class_On_logo.png" style="width:140px">
+        </a>
+        <ul class="navbar-nav mr-auto">
+            <!--<li class="nav-item active">-->
+                <!--<a class="nav-link" href="/assigment/0">Assigment</a>-->
+            <!--</li>-->
+        </ul>
+
+        <ul class="navbar-nav navbar-right">
+        {% if session.logged_in %}
+            <!--Is student-->
+            {% if session.isStudent %}
+                <li class="nav-item">
+                    <a class="nav-link" href="/student/dashboard">Dashboard<span class="sr-only">(current)</span></a>
+                </li>
+            <!--Is professor-->
+            {% elif session.isProfessor %}
+                     <li class="nav-item">
+                        <a class="nav-link" id="link-active" style="display:none" href="/professor/classroom">Active Classroom<span class="sr-only">(current)</span></a>
+                     </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/professor/dashboard">Dashboard<span class="sr-only">(current)</span></a>
+                </li>
+
+            {% endif %}
+
+            {% if 'group_id' in session %}
+                <li class="nav-item">
+                    <a class="nav-link" href="/add_new_member">Add student to group<span class="sr-only">(current)</span></a>
+                </li>
+            {% endif %}
+
+            <li class="nav-item">
+                <a class="nav-link" href="/logout">Logout<span class="sr-only">(current)</span></a>
+            </li>
+
+        {% else %}
+            <li class="nav-item">
+                <a class="nav-link" href="/login">Login<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/register">Register<span class="sr-only">(current)</span></a>
+            </li>
+        {% endif %}
+        </ul>
+    </div>
+</nav>

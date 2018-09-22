@@ -1,0 +1,71 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<head>
+    <style>
+    body  {
+        background-image: url("https://images.pexels.com/photos/317355/pexels-photo-317355.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+
+    }
+
+    .jumbotron{
+         background:#cfe6ff82;
+         transition: background 0.6s ease;
+         padding:2%;
+         box-shadow: 0 10px 18px -3px black;
+         width:80%;
+         margin:auto;
+    }
+
+    .jumbotron:hover{
+         background:#cfe6ffed;
+         transition: background 0.6s ease;
+
+    }
+    .btn{
+         box-shadow: 0 8px 11px -3px black;
+    }
+    a{
+    color:#000000;
+    }
+    a:hover{
+    color:#000000;
+    text-decoration:none;
+
+    }
+
+
+    </style>
+</head>
+
+
+    {% if session.logged_in %}
+            {% if session.isStudent %}
+            <a href="/student/dashboard">
+
+            {% elif session.isProfessor %}
+            <a href="/professor/dashboard">
+            {% endif %}
+    {% endif %}
+
+
+
+    <div class="jumbotron text-center">
+        <h1> Welcome to
+        <img src="https://image.ibb.co/jqee5z/imageedit_4_3699091877.png" style="width: 350px"></h1>
+        <p>Donec sed egestas odio. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
+            turpis egestas. Nullam sollicitudin ante a odio rutrum, iaculis pulvinar dolor ultricies.</p>
+        {% if session.logged_in == NULL %}
+            <br>
+            <a href="/register" class="btn btn-primary">Register</a>
+            <a href="/login" class="btn btn-success">Login</a>
+        {% endif %}
+    </div>
+
+    {% if session.logged_in %}
+            </a>
+    {% endif %}
+
+
+{% endblock %}

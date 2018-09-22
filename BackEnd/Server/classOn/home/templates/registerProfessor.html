@@ -1,0 +1,25 @@
+{% block professor %}
+    <h2>Professor</h2>
+    {% from "includes/_formhelpers.html" import render_field %}
+    <form method="POST" action="">
+        <div class="form-group">
+            {{render_field(formProfessor.name, class_="form-control")}}
+        </div>
+        <div class="form-group">
+            {{render_field(formProfessor.lastName, class_="form-control")}}
+        </div>
+        <div class="form-group">
+            {{render_field(formProfessor.lastNameSecond, class_="form-control")}}
+        </div>
+        <div class="form-group">
+            {{render_field(formProfessor.email, class_="form-control")}}
+        </div>
+        <div class="form-group">
+            {{render_field(formProfessor.password, class_="form-control")}}
+        </div>
+        <div class="form-group">
+            {{render_field(formProfessor.confirm, class_="form-control")}}
+        </div>
+        <p><input type="submit" name="btn" class="btn btn-primary" value="Submit professor"></p>
+    </form>
+{% endblock %}

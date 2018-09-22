@@ -67,15 +67,15 @@
              transition: 0.4s ease;
          }
 
-           html {
+          html {
 
             height:100%;
 
             }
             body{
-                        background-image: linear-gradient(to right bottom, #e9fbff, #dcf7fe, #d0f2fe, #c4edfe, #8dd9ff);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+                                 background-image: linear-gradient(to right bottom, #e9fbff, #dcf7fe, #d0f2fe, #c4edfe, #8dd9ff);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
             height:100%;
             }
 
@@ -89,25 +89,25 @@
 
 </head>
 
-<body>
-    {% include '/includes/_navbar.html' %}
+    <body>
+        {% include '/includes/_navbar.html' %}
 
 
-            <main role="main" class="container">
-        <div >
-            <br>
-            {% include 'includes/_messages.html' %}
-            {% block body %}{% endblock %}
-        </div>
-    </main>
-    <!-- <footer class="footer bg-secondary">
-        <div class="container ">
-            <div class="row text-muted">
-                <div>
-                    <a href="https://github.com/JorgeFrias/ClassOnV2" role="button" class="btn btn-secondary" aria-pressed="true">Check the project on GitHub</a>
+                <main role="main" class="container">
+            <div >
+                <br>
+                {% include 'includes/_messages.html' %}
+                {% block body %}{% endblock %}
+            </div>
+        </main>
+        <!-- <footer class="footer bg-secondary">
+            <div class="container ">
+                <div class="row text-muted">
+                    <div>
+                        <a href="https://github.com/JorgeFrias/ClassOnV2" role="button" class="btn btn-secondary" aria-pressed="true">Check the project on GitHub</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </footer> -->
-</body>
+        </footer> -->
+    </body>
 </html>

@@ -150,7 +150,6 @@ def addNewMember():
         # Logging
         if studentPasswordIncorrect is not None:                        # Professor found
             if (not studentPasswordIncorrect):                          # Correct password
-                flash('You are now logged in', 'success')
                 # Success now join the desired group
                 selectedRunningClass = runningClasses[su.get_class_id(session)]
                 groupIsIn = selectedRunningClass.studentGroups[su.get_grupo_id(session)]

@@ -7,7 +7,7 @@
     {% from "includes/_formhelpers.html" import render_field %}
     <form action="" method="POST">
         <div class="row" >
-            <div class="col-sm-4" id="col1">
+            <div class="col-sm-4 fadeInLeftBig" id="col1">
                 <div class="form-group">
                     {{render_field(form.classroom, class_="form-control")}}
                 </div>
@@ -15,7 +15,7 @@
                     {{render_field(form.assigment, class_="form-control")}}
                 </div>
 
-                <button type="submit" name="btn" class="btn btn-primary" value="create">Create class</button>
+                <button type="submit" name="btn" class="btn btn-primary" value="create">Open class</button>
             </div>
 
             <div class="col-sm-8" id="col2">

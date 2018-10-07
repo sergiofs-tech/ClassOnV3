@@ -23,6 +23,7 @@
   }
 }
 .fadeIn {
+  animation-duration: 1s;
   -webkit-animation-name: fadeIn;
   -o-animation-name: fadeIn;
   animation-name: fadeIn;
@@ -66,6 +67,7 @@
   }
 }
 .fadeInDown {
+  animation-duration: 1s;
   -webkit-animation-name: fadeInDown;
   -o-animation-name: fadeInDown;
   animation-name: fadeInDown;
@@ -109,6 +111,7 @@
   }
 }
 .fadeInDownBig {
+  animation-duration: 1s;
   -webkit-animation-name: fadeInDownBig;
   -o-animation-name: fadeInDownBig;
   animation-name: fadeInDownBig;
@@ -152,6 +155,7 @@
   }
 }
 .fadeInLeft {
+  animation-duration: 1s;
   -webkit-animation-name: fadeInLeft;
   -o-animation-name: fadeInLeft;
   animation-name: fadeInLeft;
@@ -195,6 +199,7 @@
   }
 }
 .fadeInLeftBig {
+  animation-duration: 1s;
   -webkit-animation-name: fadeInLeftBig;
   -o-animation-name: fadeInLeftBig;
   animation-name: fadeInLeftBig;
@@ -238,6 +243,7 @@
   }
 }
 .fadeInRightShort {
+  animation-duration: 1s;
   -webkit-animation-name: fadeInRightShort;
   -o-animation-name: fadeInRightShort;
   animation-name: fadeInRightShort;
@@ -281,6 +287,7 @@
   }
 }
 .fadeInLeftShort {
+  animation-duration: 1s;
   -webkit-animation-name: fadeInLeftShort;
   -o-animation-name: fadeInLeftShort;
   animation-name: fadeInLeftShort;
@@ -324,6 +331,7 @@
   }
 }
 .fadeInRight {
+  animation-duration: 1s;
   -webkit-animation-name: fadeInRight;
   -o-animation-name: fadeInRight;
   animation-name: fadeInRight;
@@ -367,6 +375,7 @@
   }
 }
 .fadeInRightBig {
+  animation-duration: 1s;
   -webkit-animation-name: fadeInRightBig;
   -o-animation-name: fadeInRightBig;
   animation-name: fadeInRightBig;
@@ -410,6 +419,7 @@
   }
 }
 .fadeInUp {
+  animation-duration: 1s;
   -webkit-animation-name: fadeInUp;
   -o-animation-name: fadeInUp;
   animation-name: fadeInUp;
@@ -453,6 +463,7 @@
   }
 }
 .fadeInUpShort {
+  animation-duration: 1s;
   -webkit-animation-name: fadeInUpShort;
   -o-animation-name: fadeInUpShort;
   animation-name: fadeInUpShort;
@@ -496,6 +507,7 @@
   }
 }
 .fadeInUpBig {
+  animation-duration: 1s;
   -webkit-animation-name: fadeInUpBig;
   -o-animation-name: fadeInUpBig;
   animation-name: fadeInUpBig;
@@ -514,6 +526,7 @@
   }
 }
 .fadeInDown {
+  animation-duration: 1s;
   -webkit-animation-name: fadeInDown;
   -o-animation-name: fadeInDown;
   animation-name: fadeInDown;
@@ -555,6 +568,7 @@
   }
 }
 .fadeInDownShort {
+  animation-duration: 1s;
   -webkit-animation-name: fadeInDownShort;
   -o-animation-name: fadeInDownShort;
   animation-name: fadeInDownShort;
@@ -573,6 +587,7 @@
   }
 }
 .fadeInDownBig {
+  animation-duration: 1s;
   -webkit-animation-name: fadeInDownBig;
   -o-animation-name: fadeInDownBig;
   animation-name: fadeInDownBig;
@@ -602,6 +617,7 @@
   }
 }
 .fadeOut {
+  animation-duration: 1s;
   -webkit-animation-name: fadeOut;
   -o-animation-name: fadeOut;
   animation-name: fadeOut;
@@ -637,6 +653,7 @@
   }
 }
 .fadeOutDown {
+  animation-duration: 1s;
   -webkit-animation-name: fadeOutDown;
   -o-animation-name: fadeOutDown;
   animation-name: fadeOutDown;
@@ -702,11 +719,9 @@ td2 img {
 }
 .navbar-brand {
   opacity: 0.9;
-  transition: 0.4s ease;
 }
 .navbar-brand:hover {
   opacity: 1;
-  transition: 0.4s ease;
 }
 .navbar {
   opacity: 0.90;
@@ -773,11 +788,17 @@ td2 img {
   box-shadow: 0 10px 18px -3px black;
   width: 80%;
   margin: auto;
-  animation-duration: 1s;
 }
 .home .jumbotron:hover {
   background: #cfe6ffed;
   transition: background 0.6s ease;
+}
+.home .jumbotron .btn {
+  color: white;
+}
+.home a {
+  color: black;
+  text-decoration: none;
 }
 .image_button {
   width: 150px;

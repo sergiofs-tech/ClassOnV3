@@ -154,8 +154,6 @@ def createClassroom():
             columns,
             room
         )
-        # Messages
-        flash('Classroom created for assigment id = ' + str(selectedAssigmentID), 'success')
 
         return redirect(url_for('professor.classroom'))
     return render_template('createClassroom.html', form=form)
@@ -191,9 +189,6 @@ def openClassroom():
         classroom = dataStructures.Classroom((rows, columns), currentProfessor, assigmentObj, room)     # Object ClassRoom
         runningClasses[classroom.id] = classroom                                                        # Add to runningClasses (dict) with id to be able to track different courses
         su.set_class_id(session, classroom.id)                                                          # Add to professor's session
-
-        # Messages
-        #flash('Classroom created for assigment id = ' + str(selectedAssigmentID), 'success')
 
         return redirect(url_for('professor.classroom'))
     return render_template('openClassroom.html', form=form)

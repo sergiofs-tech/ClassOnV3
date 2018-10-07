@@ -46,7 +46,6 @@ def registerGeneral():
                 sha256_crypt.encrypt(str(formStudent.password.data))
             )
 
-            flash('You are now registerd as student and can log in', 'success')
             return redirect(url_for('home.login'))
         elif request.form['btn'] == 'Submit professor' and formProfessor.validate():
             # flash('Professor', 'success')
@@ -57,7 +56,6 @@ def registerGeneral():
                 formProfessor.email.data,
                 sha256_crypt.encrypt(str(formProfessor.password.data))
             )
-            flash('You are now registerd as professor and can log in', 'success')
             return redirect(url_for('home.login'))
 
     return render_template('register.html', formStudent=formStudent, formProfessor=formProfessor)
@@ -84,7 +82,6 @@ def login():
         # Logging
         if studentPasswordIncorrect is not None:                        # Professor found
             if (not studentPasswordIncorrect):                          # Correct password
-                flash('You are now logged in', 'success')
                 return redirect(url_for('student.index'))
             else:                                                       # Incorrect password
                 error = 'Password Not matched'
@@ -92,8 +89,6 @@ def login():
 
         elif professorPasswordIncorrect is not None:
             if (not professorPasswordIncorrect):                        # Correct password
-
-                flash('You are now logged in as professor', 'success')
                 return redirect(url_for('professor.index'))
             else:                                                       # Incorrect password
                 error = 'Password Not matched'

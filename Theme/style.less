@@ -1,0 +1,192 @@
+ @import (less) "key_animations.css";
+
+ html {
+     height:100%;
+}
+ body{
+     background-image: linear-gradient(to right bottom, #e9fbff, #dcf7fe, #d0f2fe, #c4edfe, #8dd9ff);
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+     height:100%;
+}
+ td {
+     display:inline-block;
+}
+ tr{
+     display:block;
+     text-align:center;
+     white-space:nowrap;
+}
+ li{
+     overflow:hidden;
+}
+
+ tr3 {
+     width: 60%;
+     background-color: black;
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     color: white;
+     text-align: center;
+     border-radius: 10px;
+     margin-top: 5%;
+}
+ tr2{
+     display: block;
+     white-space:nowrap;
+     margin-left: auto;
+     margin-right: auto;
+     width: 90%;
+     text-align: center;
+}
+ td2 {
+     display:inline-block;
+     margin: 1%;
+     width:8%;
+     img{
+         width:100%;
+    }
+}
+
+         #col2 {
+             display:none;
+        }
+         .nav-link {
+             transition: 0.4s ease;
+             padding: 2px 0;
+        
+         &:hover {
+             border-top: 2px solid #ffffff;
+             border-bottom: 2px solid #ffffff;
+             transition: 0.4s ease;
+        }
+    }
+         .navbar-brand{
+             opacity:0.9;
+        
+         &:hover{
+             opacity:1;
+        }
+    }
+         .navbar{
+             opacity:0.90;
+             transition: 0.4s ease;
+             border-bottom: solid #ffffffb5;
+        
+         &:hover{
+             opacity:1;
+             transition: 0.4s ease;
+         }
+}
+ .btn{
+     box-shadow: 0 8px 11px -3px black;
+     color: white;
+}
+
+ .list-group-item {
+     padding: 0.75rem 0.25rem;
+     color: black;
+     text-shadow: 2px 2px 4px #FFFFFF;
+     font-weight: bold;
+}
+ .border-secondary{
+     opacity:0.4;
+}
+ .bell{
+     opacity:0.05;
+}
+ .ico{
+     display:none;
+}
+ .card-body{
+     padding-bottom:0.25rem;
+}
+ .prog{
+     font-size:2.3rem;
+}
+ .badge-success{
+     background-color:#344e5d;
+}
+ .card{
+     box-shadow: 0 8px 6px -6px black;
+}
+ .modal-body0{
+     border-top: 1px solid #e9ecef;
+     border-right:1px solid #e9ecef;
+}
+ .modal-body{
+     border-top: 1px solid #e9ecef;
+     border-right:1px solid #e9ecef;
+}
+ .info-detailed{
+     display:block;
+     padding-left: 1rem;
+}
+ .profile-photo{
+     width:4rem;
+}
+ 
+
+.home{
+    img{
+        width: 350px;
+    }
+    .jumbotron{
+         background:#cfe6ff82;
+         transition: background 0.6s ease;
+         padding:2%;
+         box-shadow: 0 10px 18px -3px black;
+         width:80%;
+         margin:auto;
+
+        &:hover{
+         background:#cfe6ffed;
+         transition: background 0.6s ease;
+        }
+
+        .btn{
+         color:white;
+        }
+
+    }
+
+    a{
+        color:black;
+        text-decoration: none;
+    }
+ }
+
+ // Professor Dashboard
+
+ .image_button{
+    width:150px;
+    margin-bottom:2%;
+
+    @media only screen and (max-width: 1000px) {
+            width:130px;
+    }
+
+    &:hover {
+        transform: scale(1.15);
+        transition: 0.2s ease;
+    }
+}
+
+.option_title{
+    font-weight: bold;
+}
+
+.options{
+    text-align:center;
+    transition: 0.3s ease;
+}
+
+.option{
+    display: inline-block;
+    margin-right:3%;
+    margin-left: 3%;
+    margin-top:2%;
+    margin-bottom:2%;
+
+}

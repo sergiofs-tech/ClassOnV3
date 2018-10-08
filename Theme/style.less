@@ -93,14 +93,9 @@
  .border-secondary{
      opacity:0.4;
 }
- .bell{
-     opacity:0.05;
-}
- .ico{
-     display:none;
-}
+
  .card-body{
-     padding-bottom:0.25rem;
+     padding:0.25rem;
 }
  .prog{
      font-size:2.3rem;
@@ -126,8 +121,6 @@
  .profile-photo{
      width:4rem;
 }
- 
-
 .home{
     img{
         width: 350px;
@@ -190,3 +183,178 @@
     margin-bottom:2%;
 
 }
+
+ // Professor Classsroom Map
+
+ 	// MIXINS
+
+	.m(){
+		.prog{
+			margin-left:4px;
+			margin-top:4px;
+			font-size:36px;	
+			float:left;
+			margin-right:0px;		
+		}
+		.bell{
+		    &.active{
+	    		display:block;
+	    	}
+		}
+	}
+
+	.l(){
+		.bell{
+			width:60px;
+			margin-right:3px;
+			margin-top:6px;
+		}
+		.prog{
+			margin-left:5px;
+			margin-top:12px;
+			font-size:45px;		
+		}		
+	}
+
+	.xl(){
+		.bell{
+			width:63px;
+			margin-right:17px;
+			margin-top:7px;
+		}
+		.prog{
+			margin-left:23px;
+			margin-top:13px;
+			font-size:47px;		
+		}		
+	}
+
+
+
+.col1{
+	@media (min-width: calc(130px*1/0.85)){
+		.m();		
+	}
+	
+	@media (min-width: calc(163px*1/0.85)){
+		.l();
+	}
+	@media (min-width: calc(215px*1/0.85)){
+		.xl();
+	}
+}
+.col2{
+	@media (min-width: calc(130px*2/0.85)){
+		.m();		
+	}
+	
+	@media (min-width: calc(163px*2/0.85)){
+		.l();
+	}
+	@media (min-width: calc(215px*2/0.85)){
+		.xl();
+	}
+}
+
+.col3{
+	@media (min-width: calc(130px*3/0.85)){
+		.m();		
+	}
+	
+	@media (min-width: calc(163px*3/0.85)){
+		.l();
+	}
+	@media (min-width: calc(215px*3/0.85)){
+		.xl();
+	}
+}
+
+.col4{
+	
+	@media (min-width: calc(130px*4/0.85)){
+		.m();		
+	}
+	
+	@media (min-width: calc(163px*4/0.85)){
+		.l();
+	}
+	@media (min-width: calc(215px*4/0.85)){
+		.xl();
+	}
+}
+
+.col5{
+	
+	@media (min-width: calc(130px*5/0.85)){
+		.m();		
+	}
+	
+	@media (min-width: calc(163px*5/0.85)){
+		.l();
+	}
+	@media (min-width: calc(215px*4/0.85)){
+		.xl();
+	}
+}
+
+.col6{
+	@media (min-width: calc(130px*6/0.85)){
+		.m();		
+	}
+	@media (min-width: calc(163px*6/0.85)){
+		.l();
+	}
+}
+
+.col7{
+	@media (min-width: calc(130px*7/0.85)){
+		.m();		
+	}
+}
+
+.col8{
+	@media (min-width: calc(130px*8/0.85)){
+		.m();		
+	}
+}
+.col9{
+	@media (min-width: calc(130px*9/0.85)){
+		.m();		
+	}
+}
+.col10{
+	@media (min-width: calc(130px*10/0.85)){
+		.m();		
+	}
+}
+
+
+.prog{
+	margin-left: auto;
+	margin-right: auto;
+	&.active{
+ 		display:block;
+    }
+}
+
+.bell{
+	float:right;
+    opacity:0.05;
+}
+ .ico{
+     display:none;
+     .badge{
+     	display:block;
+     }
+}
+
+.container{
+	
+	&.map{
+		padding-right:0;
+		padding-left:0;
+		max-width: 95%;
+	}
+}
+
+

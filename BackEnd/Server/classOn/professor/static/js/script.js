@@ -109,8 +109,8 @@ function addGroup(group){
                 document.getElementById("progress-badge").innerHTML=document.getElementById("progress_"+group.position).innerHTML;
             }
         }
-        document.getElementById("prog_"+ group.position).style.display="block";
-        document.getElementById("bell_"+ group.position).style.display="block";
+        document.getElementById("prog_"+ group.position).classList.add("active");
+        document.getElementById("bell_"+ group.position).classList.add("active");
 
         // Black border to new operating group
         $(jq(group.position)).toggleClass('border-secondary border-dark');

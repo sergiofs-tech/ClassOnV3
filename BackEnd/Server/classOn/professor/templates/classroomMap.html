@@ -8,6 +8,18 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+        <style>
+            .container{
+            		padding-right:0;
+                    padding-left:0;
+                    max-width: 95%;
+
+            }
+            @media (min-width: 1200px){
+                .container{
+				    max-width: 1150px;}
+		    }
+        </style>
     </head>
 
     <div class="container">
@@ -66,22 +78,20 @@
 
 </div>
 
-    <div class="container" style="padding-bottom:1.5rem;">
+    <div class="container map" style="padding-bottom:1.5rem;">
         <h2 >{{name}} map</h2>
         <br>
         <table class="table">
             {% for row in range(rows) %}
             <tr>
                 {% for column in range(columns) %}
-                    <td style='width:{{96/(columns)}}%;'>
+                    <td class='col{{(columns)}}' style='width:{{96/(columns)}}%;'>
                         <div class="card border-secondary" id="{{ row ~ '_' ~ column }}" >
                             <ul class="card-body">
-                                <!--<h5 class="card-title" >Progress:</h5>-->
-                                <h5 class="ico prog" id="prog_{{row ~ '_' ~ column}}" style="float:left">
+                                <li class="ico prog" id="prog_{{row ~ '_' ~ column}}" >
                                     <span class="badge badge-dark" id="progress_{{row ~ '_' ~ column}}" >0</span>
-                                    <!--<span class="badge badge-warning" id="doubt_{{row ~ ',' ~ column}}">Doubt</span>-->
-                                </h5>
-                                <li class="ico bell" id="bell_{{row ~ '_' ~ column}}" style="float:right">
+                                </li>
+                                <li class="ico bell" id="bell_{{row ~ '_' ~ column}}" >
                                      <img src="https://png.icons8.com/flat_round/50/000000/bell.png" style="width:100%">
                                 </li>
                             </ul>

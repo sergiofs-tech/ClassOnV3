@@ -4,9 +4,9 @@
 
 
     <style>
-
         body{
-            background-image: url("https://images.pexels.com/photos/317355/pexels-photo-317355.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+            background-image: url("/static/images/background.jpeg");
+
         }
     </style>
 
@@ -23,7 +23,7 @@
             {% endif %}
 
                     <div class="jumbotron text-center fadeInRightBig">
-                        <h1> Welcome to <img src="https://image.ibb.co/jqee5z/imageedit_4_3699091877.png" ></h1>
+                        <h1> Welcome to <img src="{{url_for('.static', filename='images/logo_big.png')}}" ></h1>
                         <p>Donec sed egestas odio. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
                             turpis egestas. Nullam sollicitudin ante a odio rutrum, iaculis pulvinar dolor ultricies.</p>
                         {% if session.logged_in == NULL %}

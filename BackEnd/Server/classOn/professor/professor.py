@@ -49,7 +49,6 @@ def createAssigment():
         su.set_assigment_id(session, id)                                        # Store id to add sections
         su.set_orderInAssigment(session, 0)                                     # To be in control adding sections
 
-        flash('You created a new assigment', 'success')
         return redirect(url_for('professor.addSections', course=course, name=name))
 
     return render_template('createAssigment.html', form=form)

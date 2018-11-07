@@ -1,5 +1,6 @@
 from flask import render_template, flash, redirect, url_for, session, request, Blueprint
 import dataStructures
+import logging
 from classOn import DBUtils
 from classOn.decorators import is_logged_in_professor, defined_session
 from classOn.professor import forms
@@ -60,9 +61,7 @@ def addSections():
 
     if (request.method == 'POST' and request.form['btn'] == 'cancel'):
         # Not needed to validate the form
-        flash('Discarded last section', 'danger')
-        flash('Saved all others', 'success')
-        return redirect(url_for('professor.dashboard'))
+         return redirect(url_for('professor.dashboard'))
 
     elif (request.method == 'POST' and form.validate()):
         if request.form['btn'] == 'add' or request.form['btn'] == 'addFinish':
@@ -132,21 +131,16 @@ def createClassroom():
 
     # Dynamic drop-down menu to choose the available assigments for professor
     assigments = assigmentsTupleList(session['id_professor'])
+    blank = (0, 'Select one to open the class')
+    assigments = [blank] + assigments
     form.assigment.choices = assigments
 
-    if (request.method == 'POST' and form.validate()):
+    if request.method == 'POST' and form.validate():
         # Form information about the new classroom
         rows = form['rows'].data
         columns = form['columns'].data
         room = form['room'].data
         selectedAssigmentID = form['assigment'].data
-
-        # Classroom objects initialization
-        assigmentObj = DBUtils.getAssigment(selectedAssigmentID)                                        # Object assigment
-        currentProfessor = DBUtils.getProfessor(su.get_professor_id(session))                           # Object professor
-        classroom = dataStructures.Classroom((rows, columns), currentProfessor, assigmentObj, room)      # Object ClassRoom
-        runningClasses[classroom.id] = classroom                                                        # Add to runningClasses (dict) with id to be able to track different courses
-        su.set_class_id(session, classroom.id)                                                          # Add to professor's session
 
         DBUtils.putClassroom(
             rows,
@@ -154,7 +148,20 @@ def createClassroom():
             room
         )
 
-        return redirect(url_for('professor.classroom'))
+        if selectedAssigmentID!=0:
+
+            # Classroom objects initialization
+            assigmentObj = DBUtils.getAssigment(selectedAssigmentID)                                        # Object assigment
+            currentProfessor = DBUtils.getProfessor(su.get_professor_id(session))                           # Object professor
+            classroom = dataStructures.Classroom((rows, columns), currentProfessor, assigmentObj, room)     # Object ClassRoom
+            runningClasses[classroom.id] = classroom                                                        # Add to runningClasses (dict) with id to be able to track different courses
+            su.set_class_id(session, classroom.id)                                                          # Add to professor's session
+
+            return redirect(url_for('professor.classroom'))
+
+        else:
+            return render_template('dashboard.html', form=form)
+
     return render_template('createClassroom.html', form=form)
 
 @professor.route('/open_classroom', methods=['GET', 'POST'])

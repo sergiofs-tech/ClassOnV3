@@ -1105,3 +1105,7 @@ td2 img {
 .assign-editor .container {
   margin: auto;
 }
+.assign-container {
+  width: 60%;
+  min-width: 400px;
+}

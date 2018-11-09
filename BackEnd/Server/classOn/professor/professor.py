@@ -64,6 +64,7 @@ def addSections():
          return redirect(url_for('professor.dashboard'))
 
     elif (request.method == 'POST' and form.validate()):
+
         if request.form['btn'] == 'add' or request.form['btn'] == 'addFinish':
 
             su.increment_orderInAssigment(session)                              # Update order
@@ -72,6 +73,7 @@ def addSections():
             order_in_assigment = su.get_orderInAssigment(session)
             name = form['name'].data
             text = form['text'].data
+            flash('Section saved', 'success')
 
             DBUtils.putSection(id_assigment, order_in_assigment, name, text)    # Add table row
 
@@ -85,7 +87,7 @@ def addSections():
                 return redirect(url_for('professor.dashboard'))
 
         else:
-            flash('Something uncontrolled append', 'danger')
+            flash('Something uncontrolled happened', 'danger')
             return redirect(url_for('professor.dashboard'))
 
     ### Fetch info to render ###

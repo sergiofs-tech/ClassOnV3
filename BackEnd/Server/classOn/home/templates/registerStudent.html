@@ -25,7 +25,12 @@
         </div>
         <div class="form-check">
             <input type="checkbox" class="form-check-input" value id="check1" onclick="validate('1')">
-            <label class="form-check-label" for="check1">I agree to the Terms of Service and I have read the Privacy Policy</label>
+            <label class="form-check-label" for="check1">
+                I agree to the 
+                <a href="{{url_for('.static', filename='doc/legalTerms.txt')}}" target="_blank">Legal Terms</a>
+                and I have read the 
+                <a href="{{url_for('.static', filename='doc/privacyPolicy.txt')}}" target="_blank">Privacy Policy</a>
+            </label>        
         </div>
         <br>
         <div>

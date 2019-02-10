@@ -790,7 +790,7 @@ td2 img {
 .home .jumbotron .btn {
   color: white;
 }
-.home a {
+.home .jumbotron a {
   color: black;
   text-decoration: none;
 }
@@ -799,9 +799,8 @@ td2 img {
   bottom: 2%;
   right: 2%;
 }
-.home .terms span {
+.home .terms span a {
   margin-left: 5px;
-  color: #1683f9;
   font-weight: 700;
   text-decoration: underline;
 }

@@ -1,6 +1,8 @@
 {% extends 'layout.html' %}
 
 {% block body %}
+    <script src="{{url_for('.static', filename='js/assignment.js')}}"></script>
+
     <h1>{{ assigment.course.name }}</h1>
     <!--<a class="btn btn-success" href="/add_article">Add article</a>-->
     <hr>
@@ -9,13 +11,13 @@
     </div>
 
     <!-- <div class="row"> -->
-        <div>
+        <div class="assignment">
         <!--Assigment column-->
         <!-- <div class="col"> -->
             <h2>{{ section.name }}</h2>
-            <p>
+            <div id="assign-container">
                 {{ section.text }}
-            </p>
+            </div>
 
             <ul class="pagination">
                 <!--Previous page-->

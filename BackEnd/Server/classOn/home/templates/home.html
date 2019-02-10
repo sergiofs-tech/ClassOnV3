@@ -2,7 +2,6 @@
 
 {% block body %}
 
-
     <style>
         body{
             background-image: url("/static/images/background.jpeg");
@@ -11,30 +10,40 @@
 
     <div class="home">
 
-    {% if session.logged_in %}
+        {% if session.logged_in %}
+
             {% if session.isStudent %}
-                <a href="/student/dashboard">
 
-                {% elif session.isProfessor %}
-                <a href="/professor/dashboard">
+        <a href="/student/dashboard">
 
-                {% endif %}
+            {% elif session.isProfessor %}
+
+        <a href="/professor/dashboard">
+
             {% endif %}
 
-                    <div class="jumbotron text-center fadeInRightBig">
-                        <h1> Welcome to <img src="{{url_for('.static', filename='images/logo_big.png')}}" ></h1>
-                        <p>Donec sed egestas odio. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
-                            turpis egestas. Nullam sollicitudin ante a odio rutrum, iaculis pulvinar dolor ultricies.</p>
-                        {% if session.logged_in == NULL %}
-                            <br>
-                            <a href="/register" class="btn btn-primary">Register</a>
-                            <a href="/login" class="btn btn-success">Login</a>
-                        {% endif %}
-                    </div>
+        {% endif %}
 
-            {% if session.logged_in %}
-                 </a>
-    {% endif %}
+        <div class="jumbotron text-center fadeInRightBig">
+            <h1> Welcome to <img src="{{url_for('.static', filename='images/logo_big.png')}}" ></h1>
+            <p>ClassOn has been designed to improve the learning experience.<br> Register if it is your first time here or log up if you already have a registered profile.</p>
+
+            {% if session.logged_in == NULL %}
+                <br>
+                <a href="/register" class="btn btn-primary">Register</a>
+                <a href="/login" class="btn btn-success">Login</a>
+            {% endif %}
+        </div>
+
+        <div class="terms">
+            <span>Legal terms</span>
+            <span>Privacy policy</span>
+        </div>
+
+
+        {% if session.logged_in %}
+        </a>
+        {% endif %}
 
     </div>
 

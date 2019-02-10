@@ -100,7 +100,7 @@ def addSections():
 
 def assigmentsTupleList(id_professor):
     '''
-    Creates a list of tuples (id, title) for the assigments of the current professor (session['id_professor']
+    Creates a list of tuples (id, title) for the assignments of the current professor (session['id_professor']
     '''
     assigments = []
     cur = mysql.connection.cursor()

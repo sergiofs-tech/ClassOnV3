@@ -14,11 +14,11 @@
 
             {% if session.isStudent %}
 
-        <a href="/student/dashboard">
+        <a href="/student/dashboard" class="jumbo-link">
 
             {% elif session.isProfessor %}
 
-        <a href="/professor/dashboard">
+        <a href="/professor/dashboard" class="jumbo-link">
 
             {% endif %}
 
@@ -35,6 +35,11 @@
             {% endif %}
         </div>
 
+
+        {% if session.logged_in %}
+        </a>
+        {% endif %}
+
         <div class="terms">
             <span>
                 <a href="{{url_for('.static', filename='doc/legalTerms.txt')}}" target="_blank">Legal Terms</a>                
@@ -43,11 +48,6 @@
                 <a href="{{url_for('.static', filename='doc/privacyPolicy.txt')}}" target="_blank">Privacy Policy</a>
             </span>
         </div>
-
-
-        {% if session.logged_in %}
-        </a>
-        {% endif %}
 
     </div>
 

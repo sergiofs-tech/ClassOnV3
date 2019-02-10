@@ -11,6 +11,7 @@
       numColumns=cols.value;
 
       var row = document.createElement("tr2");
+      row.classList.add("class-name");
       row.innerHTML=name.value;
       block.appendChild(row);
 

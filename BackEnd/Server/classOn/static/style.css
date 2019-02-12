@@ -817,7 +817,7 @@ td2 img {
 }
 @media only screen and (max-width: 1000px) {
   .image_button {
-    width: 130px;
+    width: 140px;
   }
 }
 .image_button:hover {
@@ -846,7 +846,7 @@ td2 img {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-@media (min-width: calc(130px*1/0.85)) {
+@media (min-width: calc(140px*1/0.85)) {
   .col1 .prog {
     margin-left: 4px;
     margin-top: 4px;
@@ -858,31 +858,31 @@ td2 img {
     display: block;
   }
 }
-@media (min-width: calc(163px*1/0.85)) {
+@media (min-width: calc(180px*1/0.85)) {
   .col1 .bell {
-    width: 60px;
+    width: 55px;
     margin-right: 3px;
-    margin-top: 6px;
+    margin-top: 3px;
   }
   .col1 .prog {
     margin-left: 5px;
-    margin-top: 12px;
-    font-size: 45px;
+    margin-top: 8px;
+    font-size: 40px;
   }
 }
 @media (min-width: calc(215px*1/0.85)) {
   .col1 .bell {
-    width: 63px;
+    width: 57px;
     margin-right: 17px;
-    margin-top: 7px;
+    margin-top: 3px;
   }
   .col1 .prog {
     margin-left: 23px;
-    margin-top: 13px;
-    font-size: 47px;
+    margin-top: 8px;
+    font-size: 42px;
   }
 }
-@media (min-width: calc(130px*2/0.85)) {
+@media (min-width: calc(140px*2/0.85)) {
   .col2 .prog {
     margin-left: 4px;
     margin-top: 4px;
@@ -894,31 +894,31 @@ td2 img {
     display: block;
   }
 }
-@media (min-width: calc(163px*2/0.85)) {
+@media (min-width: calc(180px*2/0.85)) {
   .col2 .bell {
-    width: 60px;
+    width: 55px;
     margin-right: 3px;
-    margin-top: 6px;
+    margin-top: 3px;
   }
   .col2 .prog {
     margin-left: 5px;
-    margin-top: 12px;
-    font-size: 45px;
+    margin-top: 8px;
+    font-size: 40px;
   }
 }
-@media (min-width: calc(215px*2/0.85)) {
+@media (min-width: calc(220px*2/0.85)) {
   .col2 .bell {
-    width: 63px;
+    width: 57px;
     margin-right: 17px;
-    margin-top: 7px;
+    margin-top: 3px;
   }
   .col2 .prog {
     margin-left: 23px;
-    margin-top: 13px;
-    font-size: 47px;
+    margin-top: 8px;
+    font-size: 42px;
   }
 }
-@media (min-width: calc(130px*3/0.85)) {
+@media (min-width: calc(140px*3/0.85)) {
   .col3 .prog {
     margin-left: 4px;
     margin-top: 4px;
@@ -930,31 +930,31 @@ td2 img {
     display: block;
   }
 }
-@media (min-width: calc(163px*3/0.85)) {
+@media (min-width: calc(180px*3/0.85)) {
   .col3 .bell {
-    width: 60px;
+    width: 55px;
     margin-right: 3px;
-    margin-top: 6px;
+    margin-top: 3px;
   }
   .col3 .prog {
     margin-left: 5px;
-    margin-top: 12px;
-    font-size: 45px;
+    margin-top: 8px;
+    font-size: 40px;
   }
 }
-@media (min-width: calc(215px*3/0.85)) {
+@media (min-width: calc(220px*3/0.85)) {
   .col3 .bell {
-    width: 63px;
+    width: 57px;
     margin-right: 17px;
-    margin-top: 7px;
+    margin-top: 3px;
   }
   .col3 .prog {
     margin-left: 23px;
-    margin-top: 13px;
-    font-size: 47px;
+    margin-top: 8px;
+    font-size: 42px;
   }
 }
-@media (min-width: calc(130px*4/0.85)) {
+@media (min-width: calc(140px*4/0.85)) {
   .col4 .prog {
     margin-left: 4px;
     margin-top: 4px;
@@ -966,31 +966,31 @@ td2 img {
     display: block;
   }
 }
-@media (min-width: calc(163px*4/0.85)) {
+@media (min-width: calc(180px*4/0.85)) {
   .col4 .bell {
-    width: 60px;
+    width: 55px;
     margin-right: 3px;
-    margin-top: 6px;
+    margin-top: 3px;
   }
   .col4 .prog {
     margin-left: 5px;
-    margin-top: 12px;
-    font-size: 45px;
+    margin-top: 8px;
+    font-size: 40px;
   }
 }
-@media (min-width: calc(215px*4/0.85)) {
+@media (min-width: calc(220px*4/0.85)) {
   .col4 .bell {
-    width: 63px;
+    width: 57px;
     margin-right: 17px;
-    margin-top: 7px;
+    margin-top: 3px;
   }
   .col4 .prog {
     margin-left: 23px;
-    margin-top: 13px;
-    font-size: 47px;
+    margin-top: 8px;
+    font-size: 42px;
   }
 }
-@media (min-width: calc(130px*5/0.85)) {
+@media (min-width: calc(140px*5/0.85)) {
   .col5 .prog {
     margin-left: 4px;
     margin-top: 4px;
@@ -1002,31 +1002,31 @@ td2 img {
     display: block;
   }
 }
-@media (min-width: calc(163px*5/0.85)) {
+@media (min-width: calc(180px*5/0.85)) {
   .col5 .bell {
-    width: 60px;
+    width: 55px;
     margin-right: 3px;
-    margin-top: 6px;
+    margin-top: 3px;
   }
   .col5 .prog {
     margin-left: 5px;
-    margin-top: 12px;
-    font-size: 45px;
+    margin-top: 8px;
+    font-size: 40px;
   }
 }
-@media (min-width: calc(215px*4/0.85)) {
+@media (min-width: calc(220px*4/0.85)) {
   .col5 .bell {
-    width: 63px;
+    width: 57px;
     margin-right: 17px;
-    margin-top: 7px;
+    margin-top: 3px;
   }
   .col5 .prog {
     margin-left: 23px;
-    margin-top: 13px;
-    font-size: 47px;
+    margin-top: 8px;
+    font-size: 42px;
   }
 }
-@media (min-width: calc(130px*6/0.85)) {
+@media (min-width: calc(140px*6/0.85)) {
   .col6 .prog {
     margin-left: 4px;
     margin-top: 4px;
@@ -1038,19 +1038,19 @@ td2 img {
     display: block;
   }
 }
-@media (min-width: calc(163px*6/0.85)) {
+@media (min-width: calc(180px*6/0.85)) {
   .col6 .bell {
-    width: 60px;
+    width: 55px;
     margin-right: 3px;
-    margin-top: 6px;
+    margin-top: 3px;
   }
   .col6 .prog {
     margin-left: 5px;
-    margin-top: 12px;
-    font-size: 45px;
+    margin-top: 8px;
+    font-size: 40px;
   }
 }
-@media (min-width: calc(130px*7/0.85)) {
+@media (min-width: calc(140px*7/0.85)) {
   .col7 .prog {
     margin-left: 4px;
     margin-top: 4px;
@@ -1062,7 +1062,7 @@ td2 img {
     display: block;
   }
 }
-@media (min-width: calc(130px*8/0.85)) {
+@media (min-width: calc(140px*8/0.85)) {
   .col8 .prog {
     margin-left: 4px;
     margin-top: 4px;
@@ -1074,7 +1074,7 @@ td2 img {
     display: block;
   }
 }
-@media (min-width: calc(130px*9/0.85)) {
+@media (min-width: calc(140px*9/0.85)) {
   .col9 .prog {
     margin-left: 4px;
     margin-top: 4px;
@@ -1086,7 +1086,7 @@ td2 img {
     display: block;
   }
 }
-@media (min-width: calc(130px*10/0.85)) {
+@media (min-width: calc(140px*10/0.85)) {
   .col10 .prog {
     margin-left: 4px;
     margin-top: 4px;
@@ -1097,6 +1097,16 @@ td2 img {
   .col10 .bell.active {
     display: block;
   }
+}
+.card {
+  background-color: #0000006b;
+}
+.card .card-body {
+  margin-bottom: 0px;
+  height: 60%;
+}
+.card .list-group {
+  height: 40%;
 }
 .prog {
   margin-left: auto;
@@ -1119,6 +1129,12 @@ td2 img {
   padding-right: 0;
   padding-left: 0;
   max-width: 95%;
+  padding-bottom: 1.5rem;
+}
+.container.map .class-name {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 5px;
 }
 #cke_editor1 {
   display: none;
@@ -1139,4 +1155,16 @@ td2 img {
 }
 .assignment h2 {
   margin-top: 10px;
+}
+.select-map .btn {
+  width: 100px;
+}
+.select-map .btn.active:hover {
+  background-color: #0062cc9e;
+}
+.select-map .btn:disabled {
+  background-color: #000b07;
+}
+.select-badge {
+  margin-bottom: 20px;
 }

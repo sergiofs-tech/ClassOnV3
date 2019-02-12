@@ -1,12 +1,11 @@
 {% extends 'layout.html' %}
 
 {% block body %}
-    <h1>Select your physical place in the room.</h1>
-    <p>The form is not beautiful but it works ¯\_(ツ)_/¯.</p>
+    <h1>Select your physical place in the room</h1>
+    <p>Pay atention to the location of the blackboard and make sure you are going to select the right place.</p>
     <hr class="my-4">
     <form action="" method="POST">
-        <span class="badge badge-pill badge-dark text-center w-100 ">Blackboard</span>
-        <table class="table">
+        <table class="table select-map">
             {% for row in range(rows) %}
             <tr>
                 {% for column in range(columns) %}
@@ -18,10 +17,7 @@
                             {% endif %}
                         {% endfor %}
                         {% if ns.repeated %}
-                            <!-- I you want only one student for each place, uncomment the line below -->
                             <button type="button" class="btn btn-primary" disabled>Took</button>
-                            <!-- And comment the line below -->
-                            <!-- <button type="submit" name="place" class="btn btn-primary active" value="{{ row ~ '_' ~ column }}">Select</button> -->
                         {% else %}
                             <button type="submit" name="place" class="btn btn-primary active" value="{{ row ~ '_' ~ column }}">Select</button>
                         {% endif %}
@@ -30,6 +26,7 @@
             </tr>
             {% endfor %}
         </table>
+        <span class="badge select-badge badge-pill badge-dark text-center w-100 ">Blackboard</span>
     </form>
 
 {% endblock %}

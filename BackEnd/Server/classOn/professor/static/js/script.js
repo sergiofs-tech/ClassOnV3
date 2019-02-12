@@ -78,6 +78,10 @@ function answerDoubt(event){
 /**
  * Adds a group to a given place in the UI
  */
+
+
+
+
 function addGroup(group){
 
     var noMembers = "noMembers_"+ group.position;           // Remove no members list item

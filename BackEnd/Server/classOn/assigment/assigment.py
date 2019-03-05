@@ -18,7 +18,8 @@ assigment = Blueprint('assigment',
                  )
 
 group_id_aux = 0;
-class_id_aux =0;
+class_id_aux = 0;
+doubts_container = [];
 
 ''' MySQL import '''
 from classOn import mysql
@@ -140,7 +141,7 @@ def handle_assigmentChangePage(group : StudentGroup):
     socketio.emit('assigment_changeProgress', group.JSON())
 
 @socketio.on('doubt_post')
-def handle_postDoubt(text):
+def handle_postDoubt(text, groupId):
     '''
     New doubt from a student. Stores the doubt in the system and send it to all other students and professor
     :param text:
@@ -151,18 +152,41 @@ def handle_postDoubt(text):
     print('DUDA class id aux 2: ' + str(class_id_aux))
 
     currentClass = runningClasses[class_id_aux]
-    currentGroup = currentClass.studentGroups[group_id_aux]
-    page_no = currentGroup.assigmentProgress
+    group = currentClass.studentGroups[groupId]
+    page_no = group.assigmentProgress
 
     doubtText = text
-    doubt = Doubt(doubtText, currentClass.assigment.sections[page_no - 1], currentGroup)
+    doubt = Doubt(doubtText, currentClass.assigment.sections[page_no - 1], group)
     doubt.postToDB()
     currentClass.addDoubt(doubt)
-    currentGroup.doubts.append(doubt)
+
+    group.doubts.append(doubt)
 
     # Notify to Professor and Students
     # room = su.get_classRoom(session)
     socketio.emit('doubt_new', doubt.JSON())
+
+@socketio.on('get_doubts1')
+def handle_get_doubts():
+
+    print('HANDLE_ get_doubts')
+    socketio.emit('get_doubts2', doubts_container)
+
+@socketio.on('set_doubts')
+def handle_set_doubts(doubts):
+
+    print('HANDLE_ set_doubts')
+    global doubts_container
+    doubts_container = doubts
+
+@socketio.on('get_user')
+def handle_getUser():
+
+    print('HANDLE_ GET USER')
+    currentClass = runningClasses[class_id_aux]
+    currentGroup = currentClass.studentGroups[group_id_aux]
+    socketio.emit('get_user', currentGroup.JSON())
+
 
 @socketio.on('doubt_query')
 def hadle_queryDoubts():
@@ -193,4 +217,7 @@ def handle_answerPost(doubtId, answer):
 @socketio.on('solve_doubt')
 def handle_solvedDoubt(data):
     print('handle_solvedDoubt')
+    currentClass = runningClasses[class_id_aux]     
+    currentGroup = currentClass.studentGroups[group_id_aux]
+    data= currentGroup
     socketio.emit('the_doubt_solved', data)

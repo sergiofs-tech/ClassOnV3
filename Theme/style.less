@@ -144,8 +144,9 @@ td2 {
     img {
         width: 350px;
     }
+
     .jumbotron {
-        background:#cfe6ff82;
+        background-color: #cfe6ff82;
         transition: background 0.6s ease;
         padding:2%;
         box-shadow: 0 10px 18px -3px black;
@@ -153,7 +154,7 @@ td2 {
         margin:auto;
 
         &:hover {
-        	background:#cfe6ffed;
+        	background-color: #cfe6ffed;
         	transition: background 0.6s ease;
         }
 
@@ -242,6 +243,8 @@ td2 {
 		margin-bottom: 10px;
 	}
 }
+
+// #ff000091 COLOR DUDA SELECCIONADA POR RECOMENDACION
 
  // Professor Classsroom Map
 
@@ -389,6 +392,11 @@ td2 {
 
 .card {
 	background-color: #0000006b;
+
+	&.recomended-student {
+		background-color: #ff0001ad !important;
+	}
+
 	.card-body {
 		margin-bottom: 0px;
 		height: 60%;
@@ -409,7 +417,11 @@ td2 {
 
 .bell {
 	float:right;
-    opacity:0.05;
+    opacity: 0.05;
+    
+    &.active-doubt {
+    	opacity: 1;
+    }
 }
  .ico {
      display:none;
@@ -431,7 +443,38 @@ td2 {
 			font-weight: 600;
 			margin-bottom: 5px;
 		}
+	}
 
+	#doubts {
+
+		.card {
+			background-color: #fffd6866;
+			margin-top: 15px;
+			margin-bottom: 15px; 
+
+			&.recomended {
+				background-color: #ff000166;
+			}
+
+			.badge {
+
+				background-color: #ffaf45;
+
+				&.badge-info {
+					background-color: #007bff;
+					margin-right: 5px;
+				}
+			}
+
+			.card-text {
+				margin-top: 5px;
+			}	
+
+			.btn {
+				margin-bottom: 10px;
+				margin-right: 10px;
+			}
+		}
 	}
 }
 

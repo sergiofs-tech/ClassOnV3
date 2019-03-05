@@ -30,9 +30,9 @@
                 <!--Middle pages-->
                 {% for section in assigment.sections_dict() %}
                     {% if section.order == (page) %}
-                        <li class="page-item active"><a class="page-link" href="/assigment/{{ assigment.db_id }}/{{ section.order }}">{{ section.order }}</a></li>
+                        <li class="page-item active" id={{ section.order }}><a class="page-link" href="/assigment/{{ assigment.db_id }}/{{ section.order }}">{{ section.order }}</a></li>
                     {% else %}
-                        <li class="page-item"><a class="page-link" href="/assigment/{{ assigment.db_id }}/{{ section.order }}">{{ section.order }}</a></li>
+                        <li class="page-item" id={{ section.order }}><a class="page-link" href="/assigment/{{ assigment.db_id }}/{{ section.order }}">{{ section.order }}</a></li>
                     {% endif %}
                 {% endfor %}
 

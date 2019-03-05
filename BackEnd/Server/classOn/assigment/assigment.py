@@ -17,6 +17,9 @@ assigment = Blueprint('assigment',
                  static_folder='static'
                  )
 
+group_id_aux = 0;
+class_id_aux =0;
+
 ''' MySQL import '''
 from classOn import mysql
 from classOn import runningClasses
@@ -60,6 +63,16 @@ def assigmentByID(id, page):
     page_no = int(page)                                     # Conversion to int
     assigment = DBUtils.getAssigment(id)                    # Get requested assigment (db_id -> id)
     currentClass = runningClasses[su.get_class_id(session)]
+
+    global class_id_aux
+    class_id_aux =  su.get_class_id(session)
+    print('class id aux 1: ' + str(class_id_aux))
+
+    global group_id_aux
+    group_id_aux = su.get_grupo_id(session)
+    print('group_id_aux 1: ' + str(group_id_aux))
+
+
     currentGroup = currentClass.studentGroups[su.get_grupo_id(session)]
 
     form = forms.PostDoubtForm(request.form)
@@ -81,7 +94,7 @@ def assigmentByID(id, page):
         if totalSections > 0:
             if page_no > 0 and page_no <= len(assigment.sections):
                 # The requested page exists
-                updateGroupAssigmentProgress(su.get_grupo_id(session), page_no)     # Notify
+                updateGroupAssigmentProgress(page_no)     # Notify
                 return render_template(
                     'assigment.html',
                     assigment=assigment,
@@ -106,7 +119,8 @@ def handle_connection():
     su.set_ownRoom(session, request.sid)
     join_room(selectedRunningClass.id)
 
-def updateGroupAssigmentProgress(groupID, progress):
+@socketio.on('changePage')
+def updateGroupAssigmentProgress(progress):
     '''
     Updates the assigment progress to all the interested.
     IMPROVE: In order to improve this, we can create groups to send the info only to interested clients.
@@ -114,6 +128,7 @@ def updateGroupAssigmentProgress(groupID, progress):
     :param progress:
     :return:
     '''
+    print('updateGroupAssigmentProgress()')
     selectedRunningClass = runningClasses[su.get_class_id(session)]
     currentGroup = selectedRunningClass.studentGroups[su.get_grupo_id(session)]
     currentGroup.assigmentProgress = progress
@@ -122,7 +137,7 @@ def updateGroupAssigmentProgress(groupID, progress):
 
 def handle_assigmentChangePage(group : StudentGroup):
     room = su.get_classRoom(session)
-    socketio.emit('assigment_changeProgress', group.JSON(), room=room)
+    socketio.emit('assigment_changeProgress', group.JSON())
 
 @socketio.on('doubt_post')
 def handle_postDoubt(text):
@@ -131,8 +146,12 @@ def handle_postDoubt(text):
     :param text:
     :return:
     '''
-    currentClass = runningClasses[su.get_class_id(session)]
-    currentGroup = currentClass.studentGroups[su.get_grupo_id(session)]
+    print('HANDLE_ POST DOUBT')
+    print('DUDA group_id_aux 2: ' + str(group_id_aux))
+    print('DUDA class id aux 2: ' + str(class_id_aux))
+
+    currentClass = runningClasses[class_id_aux]
+    currentGroup = currentClass.studentGroups[group_id_aux]
     page_no = currentGroup.assigmentProgress
 
     doubtText = text
@@ -141,11 +160,9 @@ def handle_postDoubt(text):
     currentClass.addDoubt(doubt)
     currentGroup.doubts.append(doubt)
 
-    flash('Doubt sent', 'success')
-
     # Notify to Professor and Students
-    room = su.get_classRoom(session)
-    socketio.emit('doubt_new', doubt.JSON(), room=room)
+    # room = su.get_classRoom(session)
+    socketio.emit('doubt_new', doubt.JSON())
 
 @socketio.on('doubt_query')
 def hadle_queryDoubts():
@@ -153,10 +170,11 @@ def hadle_queryDoubts():
     Handles a petition for all doubts and answers in the system. Sends the doubts to how asked for them.
     :return:
     '''
-    currentClass = runningClasses[su.get_class_id(session)]
-    doubtsJson = currentClass.JSON()                                # JSON string with doubts structure
-    room = su.get_ownRoom(session)                                  # Who asked for doubts
-    socketio.emit('doubt_query_result', doubtsJson, room=room)
+    print('handle_queryDoubts')
+    # currentClass = runningClasses[su.get_class_id(session)]
+    # doubtsJson = currentClass.JSON()                                # JSON string with doubts structure
+    # room = su.get_ownRoom(session)                                  # Who asked for doubts
+    # socketio.emit('doubt_query_result', doubtsJson, room=room)
 
 @socketio.on('answer_post')
 def handle_answerPost(doubtId, answer):
@@ -171,3 +189,8 @@ def handle_answerPost(doubtId, answer):
 
     answerJson = '{"doubtid":' + str(doubtId) + ',"text":"' + answer + '"}'
     socketio.emit('new_answer', answerJson, room=room)
+
+@socketio.on('solve_doubt')
+def handle_solvedDoubt(data):
+    print('handle_solvedDoubt')
+    socketio.emit('the_doubt_solved', data)
